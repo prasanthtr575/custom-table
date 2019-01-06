@@ -1,0 +1,26 @@
+<div *ngIf="data && columns" class="ct-container">
+  <div class="locked-grid" [ngStyle]="{ flex: lockedColumns.length }">
+    <div *ngFor="let col of lockedColumns" class="ct-column">
+      <div class="ct-col-cell ct-col-head-cell">{{ col.header }}</div>
+      <div *ngFor="let user of data" class="ct-col-cell">
+        {{ user[col.field] }}
+      </div>
+    </div>
+  </div>
+
+  <div class="unlocked-grid" [ngStyle]="{ flex: unlockedColumns.length }">
+    <div *ngFor="let col of unlockedColumns" class="ct-column">
+      <div class="ct-col-cell ct-col-head-cell">{{ col.header }}</div>
+      <div *ngFor="let user of data" class="ct-col-cell">
+        {{ user[col.field] }}
+      </div>
+    </div>
+  </div>
+
+  <div class="action-col">
+    <div class="ct-column">
+      <div class="ct-col-cell ct-col-head-cell">Action</div>
+      <div *ngFor="let user of data" class="ct-col-cell">...</div>
+    </div>
+  </div>
+</div>
