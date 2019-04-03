@@ -1,0 +1,20 @@
+.toolbar {
+  border-bottom: 1px solid #cccccc;
+}
+
+.grid {
+  table {
+    .col {
+      padding: 0px 20px 20px 0px;
+      text-align: right;
+    }
+
+    .sticky-column {
+      position: sticky;
+    }
+
+    td {
+      white-space: nowrap;
+    }
+  }
+}

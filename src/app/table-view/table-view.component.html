@@ -1,0 +1,20 @@
+<div class="toolbar"><h3>Toolbar</h3></div>
+<div class="grid">
+  <table>
+    <tr #headerRow>
+      <ng-container *ngFor="let col of columns">
+        <th class="col" [ngClass]="{ 'sticky-column': col.sticky }">
+          {{ col.title }}
+        </th>
+      </ng-container>
+    </tr>
+
+    <ng-container *ngFor="let obj of data">
+      <tr>
+        <ng-container *ngFor="let col of columns">
+          <td class="col">{{ obj[col.dataIndex] }}</td>
+        </ng-container>
+      </tr>
+    </ng-container>
+  </table>
+</div>
